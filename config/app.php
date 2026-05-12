@@ -54,6 +54,10 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'domain' => env('APP_DOMAIN', 'httpclient.de'),
+
+    'app_subdomain' => env('APP_SUBDOMAIN', 'app'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
