@@ -23,7 +23,7 @@ new #[Layout('layouts.app')] class extends Component
             session()->regenerate();
             session()->forget('is_guest');
 
-            $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+            $this->redirectIntended(default: appUrl('/dashboard'), navigate: true);
             return;
         }
 
@@ -61,7 +61,7 @@ new #[Layout('layouts.app')] class extends Component
 
         <div class="mt-6 text-center">
             <p class="text-sm text-gray-600">
-                Don't have an account? <a href="/register" class="text-blue-600 hover:underline">Register</a>
+                Don't have an account? <a href="{{ appUrl('/register') }}" class="text-blue-600 hover:underline">Register</a>
             </p>
         </div>
     </div>

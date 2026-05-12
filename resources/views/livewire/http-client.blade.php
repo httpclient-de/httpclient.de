@@ -126,7 +126,7 @@ new #[Layout('layouts.app')] class extends Component
 };
 ?>
 
-<div class="flex h-[calc(100vh-64px)] overflow-hidden bg-gray-100">
+<div class="flex h-[calc(100vh-56px)] overflow-hidden bg-gray-100">
     <!-- Sidebar: History -->
     <aside class="w-64 bg-white border-r border-gray-200 flex flex-col">
         <div class="p-4 border-b border-gray-200 flex justify-between items-center">
