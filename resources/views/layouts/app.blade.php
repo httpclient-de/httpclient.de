@@ -31,13 +31,13 @@
                                 </a>
                             </div>
 
-                            <!-- Navigation Links -->
+            <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">
-                                    Home
+                                    App
                                 </a>
-                                <a href="/http-client" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">
-                                    HTTP Client
+                                <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">
+                                    About
                                 </a>
                                 @auth
                                     <a href="/dashboard" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">
@@ -49,14 +49,14 @@
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6 space-x-4">
                             @auth
-                                <span class="text-sm text-gray-500">{{ auth()->user()->name }}</span>
+                                <span class="text-xs text-gray-500">{{ auth()->user()->name }}</span>
                                 <form method="POST" action="/logout">
                                     @csrf
-                                    <button type="submit" class="text-sm text-gray-500 hover:text-gray-700">Logout</button>
+                                    <button type="submit" class="text-xs text-gray-500 hover:text-gray-700">Logout</button>
                                 </form>
                             @else
-                                <a href="/login" class="text-sm text-gray-500 hover:text-gray-700">Login</a>
-                                <a href="/register" class="text-sm text-gray-500 hover:text-gray-700 font-semibold text-blue-600">Register</a>
+                                <a href="/login" class="text-xs text-gray-500 hover:text-gray-700">Login</a>
+                                <a href="/register" class="text-xs text-gray-500 hover:text-gray-700 font-semibold text-blue-600">Register</a>
                             @endauth
                         </div>
                     </div>
@@ -64,8 +64,8 @@
             </nav>
 
             <!-- Page Content -->
-            <main class="py-12">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <main class="">
+                <div class="max-w-full mx-auto">
                     {{ $slot }}
                 </div>
             </main>
