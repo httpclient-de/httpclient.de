@@ -416,7 +416,7 @@ new #[Layout('layouts.app')] class extends Component
                         <option>DELETE</option>
                         <option>OPTIONS</option>
                     </select>
-                    <input wire:model="url" type="text" placeholder="https://api.example.com/v1/{{resourceId}}" class="flex-1 border-none text-sm font-mono focus:ring-0 px-4">
+                    <input wire:model="url" type="text" placeholder="https://api.example.com/v1/@{{resourceId}}" class="flex-1 border-none text-sm font-mono focus:ring-0 px-4">
                 </div>
                 <button wire:click="sendRequest" wire:loading.attr="disabled" class="bg-blue-600 text-white px-8 py-2 rounded font-black text-xs hover:bg-blue-700 transition shadow-lg flex items-center">
                     <span wire:loading.remove>SEND</span>
