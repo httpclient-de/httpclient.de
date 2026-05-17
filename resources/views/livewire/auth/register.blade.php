@@ -30,7 +30,7 @@ new #[Layout('layouts.app')] class extends Component
 
         Auth::login($user);
 
-        $this->redirect(route('dashboard', absolute: false), navigate: true);
+        $this->redirect(appUrl('/dashboard'), navigate: true);
     }
 
     public function continueAsGuest(): void
@@ -39,7 +39,7 @@ new #[Layout('layouts.app')] class extends Component
         // or we could create a temporary guest user.
         // Let's just redirect to home for now as "guest users" are allowed.
         session(['is_guest' => true]);
-        $this->redirect(route('home', absolute: false), navigate: true);
+        $this->redirect(appUrl('/'), navigate: true);
     }
 };
 ?>
@@ -74,7 +74,7 @@ new #[Layout('layouts.app')] class extends Component
 
         <div class="mt-6 text-center space-y-4">
             <p class="text-sm text-gray-600">
-                Already have an account? <a href="/login" class="text-blue-600 hover:underline">Login</a>
+                Already have an account? <a href="{{ appUrl('/login') }}" class="text-blue-600 hover:underline">Login</a>
             </p>
             
             <div class="relative">
