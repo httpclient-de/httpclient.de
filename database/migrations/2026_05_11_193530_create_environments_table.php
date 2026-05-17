@@ -15,8 +15,6 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->json('variables')->nullable();
-            $table->foreignUuid('organization_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignUuid('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

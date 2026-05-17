@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('request_collections', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->foreignUuid('organization_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignUuid('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });
