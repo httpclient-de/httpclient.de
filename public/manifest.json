@@ -1,11 +1,14 @@
 {
     "name": "httpclient.de",
     "short_name": "HTTPClient",
-    "description": "The Modern HTTP Client for developers.",
-    "start_url": "/",
+    "description": "The modern, open-source HTTP client for developers.",
+    "start_url": "/app",
+    "scope": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#2563eb",
+    "orientation": "any",
+    "background_color": "#0a0a0f",
+    "theme_color": "#0a0a0f",
+    "categories": ["developer", "productivity", "utilities"],
     "icons": [
         {
             "src": "/favicon.ico",

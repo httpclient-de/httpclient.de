@@ -8,23 +8,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+use Spatie\Activitylog\Support\LogOptions;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
+
 class Environment extends Model
 {
-    use HasFactory, HasUuids, SoftDeletes;
+    use HasFactory, HasUuids, SoftDeletes, LogsActivity;
 
-    protected $fillable = ['name', 'variables', 'organization_id', 'user_id'];
+    protected $fillable = ['name', 'variables'];
 
     protected $casts = [
         'variables' => 'array',
     ];
 
-    public function user(): BelongsTo
+    public function getActivitylogOptions(): LogOptions
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function organization(): BelongsTo
-    {
-        return $this->belongsTo(Organization::class);
+        return LogOptions::defaults()
+            ->logOnly(['name', 'variables'])
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs();
     }
 }

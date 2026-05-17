@@ -8,7 +8,12 @@ new #[Layout('layouts.website')]
 #[Title('httpclient.de — The Modern HTTP Client for Developers')]
 class extends Component
 {
-    //
+    public function mount()
+    {
+        if (env('NATIVEPHP_RUNNING')) {
+            return redirect()->route('app.home');
+        }
+    }
 };
 ?>
 

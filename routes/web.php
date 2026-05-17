@@ -29,20 +29,8 @@ Route::prefix('app')->group(function () {
     // App home — the HTTP client
     Volt::route('/', 'http-client')->name('app.home');
 
-    // Auth routes (guests only)
-    Volt::route('/login', 'auth.login')->name('login')->middleware('guest');
-    Volt::route('/register', 'auth.register')->name('register')->middleware('guest');
-
-    // Protected routes
-    Volt::route('/dashboard', 'dashboard')->name('dashboard')->middleware('auth');
-
-    // Logout
-    Route::post('/logout', function () {
-        Auth::logout();
-        session()->invalidate();
-        session()->regenerateToken();
-        return redirect(appUrl('/'));
-    })->name('logout');
+    // Dashboard
+    Volt::route('/dashboard', 'dashboard')->name('dashboard');
 
     // Offline fallback (for service worker)
     Route::get('/offline', function () {
