@@ -8,7 +8,12 @@ new #[Layout('layouts.website')]
 #[Title('httpclient.de — The Modern HTTP Client for Developers')]
 class extends Component
 {
-    //
+    public function mount()
+    {
+        if (class_exists('Native\Laravel\Facades\Window') || request()->header('X-NativePHP')) {
+            return redirect()->route('app.home');
+        }
+    }
 };
 ?>
 

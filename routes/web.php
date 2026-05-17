@@ -13,12 +13,7 @@ use Livewire\Volt\Volt;
 |
 */
 
-Volt::route('/', 'website.landing')->name('website.home')->middleware(function ($request, $next) {
-    if (class_exists('Native\Laravel\Facades\Window') || $request->header('X-NativePHP')) {
-        return redirect()->route('app.home');
-    }
-    return $next($request);
-});
+Volt::route('/', 'website.landing')->name('website.home');
 Volt::route('/about', 'website.about')->name('website.about');
 
 /*
