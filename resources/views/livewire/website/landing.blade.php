@@ -10,7 +10,7 @@ class extends Component
 {
     public function mount()
     {
-        if (class_exists('Native\Laravel\Facades\Window') || request()->header('X-NativePHP')) {
+        if (env('NATIVEPHP_RUNNING')) {
             return redirect()->route('app.home');
         }
     }
